@@ -1,23 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div style={{"margin":"auto","width": "60rem"}}>
+      <header>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          <strong>Survey-Engine</strong>: a React concept for a survey application that can handle 
+          <ul>
+            <li>numeric, text, other kinds of input</li>
+            <li>branched logic</li>
+            <li>using a 'script' to map the flow of the survey, optional questions and what to do 
+              if someone answers a certain question a certain way (follow-up questions)
+            </li>
+          </ul>
+          Partial inspiration comes from the Typescript/Bootstrap overhaul of the Cost Calculator
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );

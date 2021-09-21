@@ -1,0 +1,22 @@
+{
+  "script": [
+    {
+      "placeholder": "Type in your favorite color",
+      "prompt": "What is your favorite color?",
+      "type": "text-single-line",
+      "responseStorageID": 0
+    },
+    {
+      "placeholder": "Type in your quest",
+      "prompt": "What is your quest?",
+      "type": "text-single-line",
+      "responseStorageID": 1
+    },
+    {
+      "placeholder": "Type in the air speed velocity of an unladen swallow",
+      "prompt": "What is the air speed velocity of an unladen swallow?",
+      "type": "text-single-line",
+      "responseStorageID": 2
+    }
+  ]
+}

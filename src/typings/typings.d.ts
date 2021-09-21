@@ -12,12 +12,12 @@ interface Question {
   responseStorageID: number
 }
 
+interface QuestionState {
+  questionID: number,
+  answerPayload: string
+}
+
 interface TextQuestionProps {
   question: Question,
   handler: function
-}
-
-interface QuestionAnswer {
-  responseStorageID: string,
-  response: string
 }

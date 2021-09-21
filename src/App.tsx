@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form} from 'react-bootstrap';
+import ErrorBoundary from './ErrorBoundary';
 import * as SurveyQuestions from "./data/survey-script.json";
 import TextSingleLine from './components/text-single-line';
 
@@ -13,18 +13,22 @@ class App extends React.Component<AppProps, AppState> {
     };
   }
 
-  handleAnswerSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(e);
-    return;
+  handleAnswerSubmit = (
+    event: React.FormEvent<HTMLInputElement>
+    
+    ) => {
+    event.preventDefault();
+    console.log(event.currentTarget);
   }
 
   render() {
     console.log(SurveyQuestions);
     return (
-      <div style={{"margin":"auto","width": "60rem"}}>
-        <TextSingleLine question={this.state.SURVEY_SCRIPT[0]} handler={this.handleAnswerSubmit} />
-      </div>
+      <ErrorBoundary>
+        <div style={{"margin":"auto","width": "60rem"}}>
+          <TextSingleLine question={this.state.SURVEY_SCRIPT[0]} handler={this.handleAnswerSubmit} />
+        </div>
+      </ErrorBoundary>
     );
   }
 }

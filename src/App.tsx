@@ -13,12 +13,19 @@ class App extends React.Component<AppProps, AppState> {
     };
   }
 
-  handleAnswerSubmit = (
-    event: React.FormEvent<HTMLInputElement>
+  handleAnswerSubmit = (answerStorageID: number, answer: string) => {
+    let _sa = this.state.SURVEY_ANSWERS;
     
-    ) => {
-    event.preventDefault();
-    console.log(event.currentTarget);
+    _sa.push({
+      question: answerStorageID,
+      answer: answer
+    });
+
+    console.log(_sa);
+    
+    this.setState({
+      
+    });
   }
 
   render() {

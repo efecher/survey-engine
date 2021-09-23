@@ -23,7 +23,13 @@ interface QuestionState {
   answerPayload: string
 }
 
-interface TextQuestionProps {
+interface QuestionProps {
   question: Question,
   handler: function
+}
+
+interface NumericInputProps extends QuestionProps {
+  min: number,
+  max: number,
+  step: number
 }

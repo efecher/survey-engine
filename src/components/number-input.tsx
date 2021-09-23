@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
 
-export const TextSingleLine = (props: QuestionProps) => {
+export const NumberInput = (props: NumericInputProps) => {
   const [answer, setAnswer] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.currentTarget.value);
   };
-  
+
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     props.handler(props.question.QID, answer);
     setAnswer(''); // NOTE: reset the answer value so the bound input won't start with the answer you gave for the last question
     return;
   }
-  
+
   return(
     <Form onSubmit={(e) => { onSubmit(e) }}>
       <Container>
@@ -25,7 +25,7 @@ export const TextSingleLine = (props: QuestionProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control type="text" onChange={onChange} value={answer}  placeholder={props.question.placeholder} />
+            <Form.Control type="number" onChange={onChange} value={answer}  min={props.min} max={props.max} step={props.step} />
           </Col>
           <Col sm={4} className="my-1">
             <Button type="submit">Submit</Button>
@@ -34,6 +34,6 @@ export const TextSingleLine = (props: QuestionProps) => {
       </Container>
     </Form>
   );
-} 
+}
 
-export default TextSingleLine;
+export default NumberInput;

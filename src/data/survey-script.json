@@ -1,22 +1,34 @@
 {
   "script": [
     {
+      "followUp": "",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 0,
+      "next": "6ab27e85-c758-477e-9e31-5cbffbf99255",
       "placeholder": "Type in your favorite color",
       "prompt": "What is your favorite color?",
-      "type": "text-single-line",
-      "responseStorageID": 0
+      "QID": "a44f8dab-875e-423c-8199-78fc333b6534",
+      "type": "text-single-line"
     },
     {
+      "followUp": "",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 1,
+      "next": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
       "placeholder": "Type in your quest",
       "prompt": "What is your quest?",
-      "type": "text-single-line",
-      "responseStorageID": 1
+      "QID": "6ab27e85-c758-477e-9e31-5cbffbf99255",
+      "type": "text-single-line"
     },
     {
+      "followUp": "",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 2,
+      "next": "",
       "placeholder": "Type in the air speed velocity of an unladen swallow",
       "prompt": "What is the air speed velocity of an unladen swallow?",
-      "type": "text-single-line",
-      "responseStorageID": 2
+      "QID": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
+      "type": "text-single-line"
     }
   ]
 }

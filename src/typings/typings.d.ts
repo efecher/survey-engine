@@ -2,14 +2,19 @@ interface AppProps {}
 
 interface AppState {
   SURVEY_SCRIPT: Question[],
-  SURVEY_ANSWERS: QuestionAnswer[]
+  SURVEY_ANSWERS: QuestionAnswer[],
+  currentMajorQuestion: number
 }
 
 interface Question {
+  followUp: string,    // NOTE: UUID of a follow-up question to this one
+  isMajorQuestion: boolean, // NOTE: is this a major question or a follow-up?
+  majorQuestionPosition: number, // NOTE: if a major question, its position in the survey
+  next: string,        // NOTE: UUID of the next major question in script
   placeholder: string,
   prompt: string,
-  type: string,
-  responseStorageID: number
+  QID: string,         // NOTE: UUID of this question
+  type: string
 }
 
 interface QuestionState {

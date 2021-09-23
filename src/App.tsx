@@ -8,12 +8,19 @@ class App extends React.Component<AppProps, AppState> {
     super(props);
 
     this.state = {
-      SURVEY_SCRIPT: SurveyQuestions.script,
-      SURVEY_ANSWERS: []
+      currentMajorQuestion: 0,
+      SURVEY_SCRIPT: [],
+      SURVEY_ANSWERS: [],
     };
   }
 
-  handleAnswerSubmit = (answerStorageID: number, answer: string) => {
+  componentDidMount = () => {
+    this.setState({
+      SURVEY_SCRIPT: SurveyQuestions.script
+    });
+  }
+
+  handleAnswerSubmit = (answerStorageID: string, answer: string) => {
     let _sa = this.state.SURVEY_ANSWERS;
     
     _sa.push({
@@ -21,22 +28,32 @@ class App extends React.Component<AppProps, AppState> {
       answer: answer
     });
 
-    console.log(_sa);
+    let _cmq = this.state.currentMajorQuestion + 1;
+
+    //console.log(_sa);
     
     this.setState({
-      
+      SURVEY_ANSWERS: _sa,
+      currentMajorQuestion: _cmq
     });
+
+    return;
   }
 
   render() {
-    console.log(SurveyQuestions);
-    return (
-      <ErrorBoundary>
-        <div style={{"margin":"auto","width": "60rem"}}>
-          <TextSingleLine question={this.state.SURVEY_SCRIPT[0]} handler={this.handleAnswerSubmit} />
-        </div>
-      </ErrorBoundary>
-    );
+    //console.log(SurveyQuestions);
+    if(this.state.SURVEY_SCRIPT.length) {
+      return (
+        <ErrorBoundary>
+          <div style={{"margin":"auto","width": "60rem"}}>
+            {console.log(this.state.currentMajorQuestion)}
+            <TextSingleLine question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
+          </div>
+        </ErrorBoundary>
+      );
+    } else {
+      return <p>Loading...</p>;
+    }
   }
 }
 

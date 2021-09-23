@@ -1,7 +1,7 @@
 {
   "script": [
     {
-      "followUp": "",
+      "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 0,
       "next": "6ab27e85-c758-477e-9e31-5cbffbf99255",
@@ -11,7 +11,7 @@
       "type": "text-single-line"
     },
     {
-      "followUp": "",
+      "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 1,
       "next": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
@@ -21,7 +21,7 @@
       "type": "text-single-line"
     },
     {
-      "followUp": "",
+      "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 2,
       "next": "",
@@ -31,7 +31,7 @@
       "type": "text-single-line"
     },
     {
-      "followUp": "",
+      "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 3,
       "next": "",

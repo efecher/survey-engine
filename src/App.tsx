@@ -11,6 +11,7 @@ class App extends React.Component<AppProps, AppState> {
       currentMajorQuestion: 0,
       SURVEY_SCRIPT: [],
       SURVEY_ANSWERS: [],
+      finished: false
     };
   }
 
@@ -28,14 +29,25 @@ class App extends React.Component<AppProps, AppState> {
       answer: answer
     });
 
-    let _cmq = this.state.currentMajorQuestion + 1;
+    // NOTE: check to see if we are at the last question before incrementing
+    let _cmq = this.state.currentMajorQuestion;
+    if((_cmq + 1) < this.state.SURVEY_SCRIPT.length) {
+      _cmq++;
+      this.setState({
+        SURVEY_ANSWERS: _sa,
+        currentMajorQuestion: _cmq
+      });
+    } else {
+      // NOTE: we finished the survey, set flag in state
+      this.setState({
+        finished: true
+      });
+    }
+    
 
     //console.log(_sa);
     
-    this.setState({
-      SURVEY_ANSWERS: _sa,
-      currentMajorQuestion: _cmq
-    });
+    
 
     return;
   }
@@ -43,14 +55,18 @@ class App extends React.Component<AppProps, AppState> {
   render() {
     //console.log(SurveyQuestions);
     if(this.state.SURVEY_SCRIPT.length) {
-      return (
-        <ErrorBoundary>
-          <div style={{"margin":"auto","width": "60rem"}}>
-            {console.log(this.state.currentMajorQuestion)}
-            <TextSingleLine question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
-          </div>
-        </ErrorBoundary>
-      );
+      if(!this.state.finished) {
+        return (
+          <ErrorBoundary>
+            <div style={{"margin":"auto","width": "60rem"}}>
+              {console.log(this.state.currentMajorQuestion)}
+              <TextSingleLine question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
+            </div>
+          </ErrorBoundary>
+        );
+      } else {
+        return <p>We have finished the survey!</p> 
+      }
     } else {
       return <p>Loading...</p>;
     }

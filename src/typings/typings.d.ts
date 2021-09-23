@@ -3,7 +3,8 @@ interface AppProps {}
 interface AppState {
   SURVEY_SCRIPT: Question[],
   SURVEY_ANSWERS: QuestionAnswer[],
-  currentMajorQuestion: number
+  currentMajorQuestion: number,
+  finished: boolean
 }
 
 interface Question {

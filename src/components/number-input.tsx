@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
 
-export const NumberInput = (props: NumericInputProps) => {
+export const NumberInput = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +25,7 @@ export const NumberInput = (props: NumericInputProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control type="number" onChange={onChange} value={answer}  min={props.min} max={props.max} step={props.step} />
+            <Form.Control type="number" onChange={onChange} value={answer}  min={props.question.min} max={props.question.max} step={props.question.step} />
           </Col>
           <Col sm={4} className="my-1">
             <Button type="submit">Submit</Button>

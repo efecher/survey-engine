@@ -29,6 +29,19 @@
       "prompt": "What is the air speed velocity of an unladen swallow?",
       "QID": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
       "type": "text-single-line"
+    },
+    {
+      "followUp": "",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 3,
+      "next": "",
+      "placeholder": "0",
+      "prompt": "Select a number",
+      "QID": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
+      "type": "number-input",
+      "min": "0",
+      "max": "100",
+      "step": "1"
     }
   ]
 }

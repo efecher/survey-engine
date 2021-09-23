@@ -1,7 +1,8 @@
 import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import * as SurveyQuestions from "./data/survey-script.json";
-import TextSingleLine from './components/text-single-line';
+import Page from "./components/page";
+
 
 class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
@@ -13,7 +14,7 @@ class App extends React.Component<AppProps, AppState> {
       SURVEY_ANSWERS: [],
       finished: false
     };
-  }
+  } 
 
   componentDidMount = () => {
     this.setState({
@@ -43,12 +44,7 @@ class App extends React.Component<AppProps, AppState> {
         finished: true
       });
     }
-    
-
     //console.log(_sa);
-    
-    
-
     return;
   }
 
@@ -60,7 +56,7 @@ class App extends React.Component<AppProps, AppState> {
           <ErrorBoundary>
             <div style={{"margin":"auto","width": "60rem"}}>
               {console.log(this.state.currentMajorQuestion)}
-              <TextSingleLine question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
+              <Page question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
             </div>
           </ErrorBoundary>
         );

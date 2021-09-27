@@ -14,13 +14,16 @@ interface Question {
   majorQuestionPosition: number, // NOTE: if a major question, its position in the survey
   max?: string,
   min?: string,
-  next: string,        // NOTE: UUID of the next major question in script
-  placeholder: string,
+  next: string,        // NOTE: UUID of the next major question in script,
+  options?: string[],
+  placeholder?: string,
   prompt: string,
   QID: string,         // NOTE: UUID of this question
   type: string,
   step?: string
 }
+
+
 
 interface QuestionState {
   questionID: number,

@@ -35,7 +35,7 @@ export const SelectList = (props: QuestionProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control as="select" onChange={onChange}>
+            <Form.Select as="select" onChange={onChange}>
               {
                 (props.question.options !== undefined)?
                   generateOptions(props.question.options): null

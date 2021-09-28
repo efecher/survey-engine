@@ -1,0 +1,86 @@
+{
+  "script": [
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 0,
+      "next": "6ab27e85-c758-477e-9e31-5cbffbf99255",
+      "placeholder": "Type in your favorite color",
+      "prompt": "What is your favorite color?",
+      "QID": "a44f8dab-875e-423c-8199-78fc333b6534",
+      "type": "text-single-line"
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 1,
+      "next": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
+      "placeholder": "Type in your quest",
+      "prompt": "What is your quest?",
+      "QID": "6ab27e85-c758-477e-9e31-5cbffbf99255",
+      "type": "text-single-line"
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 2,
+      "next": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
+      "placeholder": "Type in the air speed velocity of an unladen swallow",
+      "prompt": "What is the air speed velocity of an unladen swallow?",
+      "QID": "ea3f8ddb-c674-4624-ac89-38a084eb7ca7",
+      "type": "text-single-line"
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 3,
+      "next": "ed25226e-6fc2-4faa-9f3d-6d771dd80f29",
+      "placeholder": "0",
+      "prompt": "Select a number",
+      "QID": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
+      "type": "number-input",
+      "min": "0",
+      "max": "100",
+      "step": "1"
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 4,
+      "next": "4600f5e7-e4c7-4ef4-9079-5dbe4354722c",
+      "prompt": "Select a value from the dropdown list",
+      "QID": "ed25226e-6fc2-4faa-9f3d-6d771dd80f29",
+      "type": "select-list",
+      "options": [
+        "One",
+        "Two",
+        "Three"  
+      ]
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 5,
+      "next": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
+      "placeholder": "Enter some text in this box",
+      "prompt": "Enter some text in this comment area",
+      "QID": "4600f5e7-e4c7-4ef4-9079-5dbe4354722c",
+      "type": "text-area"
+    },
+    {
+      "followUps": [],
+      "groupName": "doors",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 6,
+      "next": "",
+      "prompt": "Choose from the following",
+      "QID": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
+      "type": "radio-buttons",
+      "options": [
+        "Door 1",
+        "Door 2",
+        "Door 3"
+      ]
+    }
+  ]
+}

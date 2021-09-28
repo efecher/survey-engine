@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, Button, Container } from 'react-bootstrap';
+import { Form, FormGroup, Row, Col, Button, Container } from 'react-bootstrap';
 import { uuid } from 'uuidv4';
 
-export const SelectList = (props: QuestionProps) => {
+export const RadioButtons = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,15 +16,6 @@ export const SelectList = (props: QuestionProps) => {
     return;
   }
   
-  const generateOptions = (options: string[]) => {
-    let output: JSX.Element[] = options.map((o) => {
-      return <option key={uuid()} value={o}>{o}</option>;
-    });
-
-    return output;
-  }
-
-
   return(
     <Form onSubmit={(e) => { onSubmit(e) }}>
       <Container>
@@ -34,14 +25,22 @@ export const SelectList = (props: QuestionProps) => {
           </Col>
         </Row>
         <Row>
-          <Col sm={4} className="my-1">
-            <Form.Control as="select" className="form-select" onChange={onChange}>
-              {
-                (props.question.options !== undefined)?
-                  generateOptions(props.question.options): null
-              }
-            </Form.Control>
-          </Col>
+          <FormGroup>
+            <Col sm={4} className="my-1">
+              {(typeof props.question.options !== "undefined")? props.question.options.map((option,index) => {
+                return <Form.Check 
+                  className="mb-3"
+                  type="radio" 
+                  id={`${props.question.groupName}-${index}`}
+                  label={option}
+                  name={props.question.groupName}
+                  key={uuid()}
+                  onChange={onChange}
+                  value={option}
+                />
+              }): null}
+            </Col>
+          </FormGroup>
           <Col sm={4} className="my-1">
             <Button type="submit">Submit</Button>
           </Col>
@@ -51,4 +50,4 @@ export const SelectList = (props: QuestionProps) => {
   );
 } 
 
-export default SelectList;
+export default RadioButtons;

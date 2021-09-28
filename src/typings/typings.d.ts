@@ -10,6 +10,7 @@ interface AppState {
 
 interface Question {
   followUps: string[],    // NOTE: UUID of a follow-up question to this one
+  groupName?: string, // NOTE for grouped inputs like check/radio
   isMajorQuestion: boolean, // NOTE: is this a major question or a follow-up?
   majorQuestionPosition: number, // NOTE: if a major question, its position in the survey
   max?: string,

@@ -1,7 +1,8 @@
-import React from 'react';
+import TextArea from './text-area';
 import TextSingleLine from './text-single-line';
 import NumberInput from './number-input';
 import SelectList from './select-list';
+import RadioButtons from './radio-buttons';
 
 
 export const Page = (props: QuestionProps) => {
@@ -9,6 +10,10 @@ export const Page = (props: QuestionProps) => {
     case "number-input": return <NumberInput question={props.question} handler={props.handler} />;
 
     case "select-list": return <SelectList question={props.question} handler={props.handler} />;
+
+    case "text-area": return <TextArea question={props.question} handler={props.handler} />;
+
+    case "radio-buttons": return <RadioButtons question={props.question} handler={props.handler} />;
     
     // NOTE: Default question type is a simple single line text
     default: return <TextSingleLine question={props.question} handler={props.handler} />;

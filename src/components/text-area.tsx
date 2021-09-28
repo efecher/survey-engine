@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
-import { uuid } from 'uuidv4';
 
-export const SelectList = (props: QuestionProps) => {
+export const TextArea = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,15 +15,6 @@ export const SelectList = (props: QuestionProps) => {
     return;
   }
   
-  const generateOptions = (options: string[]) => {
-    let output: JSX.Element[] = options.map((o) => {
-      return <option key={uuid()} value={o}>{o}</option>;
-    });
-
-    return output;
-  }
-
-
   return(
     <Form onSubmit={(e) => { onSubmit(e) }}>
       <Container>
@@ -35,12 +25,7 @@ export const SelectList = (props: QuestionProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control as="select" className="form-select" onChange={onChange}>
-              {
-                (props.question.options !== undefined)?
-                  generateOptions(props.question.options): null
-              }
-            </Form.Control>
+            <Form.Control as="textarea" onChange={onChange} value={answer}  placeholder={props.question.placeholder} />
           </Col>
           <Col sm={4} className="my-1">
             <Button type="submit">Submit</Button>
@@ -51,4 +36,4 @@ export const SelectList = (props: QuestionProps) => {
   );
 } 
 
-export default SelectList;
+export default TextArea;

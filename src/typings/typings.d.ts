@@ -16,7 +16,7 @@ interface Question {
   max?: string,
   min?: string,
   next: string,        // NOTE: UUID of the next major question in script,
-  options?: string[],
+  options?: QuestionOptions[],
   placeholder?: string,
   prompt: string,
   QID: string,         // NOTE: UUID of this question
@@ -24,7 +24,10 @@ interface Question {
   step?: string
 }
 
-
+interface QuestionOptions {
+  name: string,
+  value: string
+}
 
 interface QuestionState {
   questionID: number,

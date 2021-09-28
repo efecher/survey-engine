@@ -32,11 +32,12 @@ export const RadioButtons = (props: QuestionProps) => {
                   className="mb-3"
                   type="radio" 
                   id={`${props.question.groupName}-${index}`}
-                  label={option}
+                  label={option.value}
+                  checked={answer === option.value}
                   name={props.question.groupName}
                   key={uuid()}
                   onChange={onChange}
-                  value={option}
+                  value={option.value}
                 />
               }): null}
             </Col>

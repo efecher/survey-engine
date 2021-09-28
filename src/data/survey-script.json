@@ -10,9 +10,18 @@
       "QID": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
       "type": "radio-buttons",
       "options": [
-        "Door 1",
-        "Door 2",
-        "Door 3"
+        {
+          "name": "door1",
+          "value": "Door 1"
+        },
+        {
+          "name": "door2",
+          "value": "Door 2"
+        },
+        {
+          "name": "door3",
+          "value": "Door 3"
+        }  
       ]
     }
   ]

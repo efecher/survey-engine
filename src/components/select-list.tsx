@@ -16,9 +16,9 @@ export const SelectList = (props: QuestionProps) => {
     return;
   }
   
-  const generateOptions = (options: string[]) => {
+  const generateOptions = (options: QuestionOptions[]) => {
     let output: JSX.Element[] = options.map((o) => {
-      return <option key={uuid()} value={o}>{o}</option>;
+      return <option key={uuid()} value={o.value}>{o.name}</option>;
     });
 
     return output;

@@ -9,7 +9,7 @@ export const CheckBoxes = (props: QuestionProps) => {
   const [checkedState, setCheckedState] = useState(new Array(props.question.options!.length).fill(false));
   
   const handleChange = (position: number) => {
-    console.log(`position: ${position}`);
+    //console.log(`position: ${position}`);
     const updatedCheckedState = checkedState.map((item, index) => {
       if(index === position) {
         return !item;
@@ -21,15 +21,23 @@ export const CheckBoxes = (props: QuestionProps) => {
     setCheckedState(updatedCheckedState);
   };
 
-  /*const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    props.handler(props.question.QID, answer);
+    let decodedAnswerMatrix: object[] = [];
+
+    checkedState.map((checked, index) => {
+      if(checked) {
+        decodedAnswerMatrix.push({question: props.question.prompt, answer: props.question.options![index].value});
+      }
+    });
+    //console.log(decodedAnswerMatrix);
+    props.handler(props.question.QID, decodedAnswerMatrix);
     // NOTE: reset the answer value so the bound input won't start with the answer you gave for the last question
-    return;
-  }*/
+    //return;
+  }
   
   return(
-    <Form /*onSubmit={(e) => { onSubmit(e) }}*/>
+    <Form onSubmit={(e) => { onSubmit(e) }}>
       <Container>
         <Row className="align-items-center">
           <Col sm={12} className="my-1">

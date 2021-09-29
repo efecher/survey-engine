@@ -55,7 +55,7 @@ class App extends React.Component<AppProps, AppState> {
         return (
           <ErrorBoundary>
             <div style={{"margin":"auto","width": "60rem"}}>
-              {console.log(this.state.currentMajorQuestion)}
+              {/*console.log(this.state.currentMajorQuestion)*/}
               <Page question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
             </div>
           </ErrorBoundary>

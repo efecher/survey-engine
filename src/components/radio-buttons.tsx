@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Row, Col, Button, Container } from 'react-bootstrap';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 export const RadioButtons = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
@@ -35,7 +35,7 @@ export const RadioButtons = (props: QuestionProps) => {
                   label={option.value}
                   checked={answer === option.value}
                   name={props.question.groupName}
-                  key={uuid()}
+                  key={v4()}
                   onChange={onChange}
                   value={option.value}
                 />

@@ -3,6 +3,7 @@ import TextSingleLine from './text-single-line';
 import NumberInput from './number-input';
 import SelectList from './select-list';
 import RadioButtons from './radio-buttons';
+import CheckBoxes from './check-boxes';
 
 
 export const Page = (props: QuestionProps) => {
@@ -14,6 +15,8 @@ export const Page = (props: QuestionProps) => {
     case "text-area": return <TextArea question={props.question} handler={props.handler} />;
 
     case "radio-buttons": return <RadioButtons question={props.question} handler={props.handler} />;
+
+    case "check-boxes": return <CheckBoxes question={props.question} handler={props.handler} />;
     
     // NOTE: Default question type is a simple single line text
     default: return <TextSingleLine question={props.question} handler={props.handler} />;

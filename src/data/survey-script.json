@@ -4,11 +4,11 @@
       "followUps": [],
       "groupName": "doors",
       "isMajorQuestion": true,
-      "majorQuestionPosition": 0,
-      "next": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
+      "majorQuestionPosition": 1,
+      "next": "",
       "prompt": "Choose from the following",
-      "QID": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
-      "type": "radio-buttons",
+      "QID": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
+      "type": "check-boxes",
       "options": [
         {
           "name": "door1",
@@ -28,11 +28,11 @@
       "followUps": [],
       "groupName": "doors",
       "isMajorQuestion": true,
-      "majorQuestionPosition": 1,
-      "next": "",
+      "majorQuestionPosition": 0,
+      "next": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
       "prompt": "Choose from the following",
-      "QID": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
-      "type": "check-boxes",
+      "QID": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
+      "type": "radio-buttons",
       "options": [
         {
           "name": "door1",

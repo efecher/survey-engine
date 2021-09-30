@@ -3,8 +3,6 @@ import { Form, FormGroup, Row, Col, Button, Container } from 'react-bootstrap';
 import { v4 } from 'uuid';
 
 export const CheckBoxes = (props: QuestionProps) => {
-  //const [answer, setAnswer] = useState(new Array());
-
   // NOTE: to manage which check boxes are selected
   const [checkedState, setCheckedState] = useState(new Array(props.question.options!.length).fill(false));
   
@@ -23,12 +21,13 @@ export const CheckBoxes = (props: QuestionProps) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    let decodedAnswerMatrix: object[] = [];
+    let decodedAnswerMatrix: string[] = [];
 
     checkedState.map((checked, index) => {
       if(checked) {
-        decodedAnswerMatrix.push({question: props.question.prompt, answer: props.question.options![index].value});
+        decodedAnswerMatrix.push(props.question.options![index].value);
       }
+      return;
     });
     //console.log(decodedAnswerMatrix);
     props.handler(props.question.QID, decodedAnswerMatrix);

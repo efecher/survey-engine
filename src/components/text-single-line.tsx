@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
+import './question.css';
 
 export const TextSingleLine = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
@@ -16,6 +17,7 @@ export const TextSingleLine = (props: QuestionProps) => {
   }
   
   return(
+    <Col className="page" md={10}>
     <Form onSubmit={(e) => { onSubmit(e) }}>
       <Container>
         <Row className="align-items-center">
@@ -33,6 +35,7 @@ export const TextSingleLine = (props: QuestionProps) => {
         </Row>
       </Container>
     </Form>
+    </Col>
   );
 } 
 

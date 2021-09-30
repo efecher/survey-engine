@@ -2,6 +2,10 @@ import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import * as SurveyQuestions from "./data/survey-script.json";
 import Page from "./components/page";
+import Hero from './components/ui-components/hero';
+import Sidebar from "./components/ui-components/sidebar";
+import { Container, Row, Col } from "react-bootstrap";
+import './App.css';
 
 
 class App extends React.Component<AppProps, AppState> {
@@ -54,10 +58,17 @@ class App extends React.Component<AppProps, AppState> {
       if(!this.state.finished) {
         return (
           <ErrorBoundary>
-            <div style={{"margin":"auto","width": "60rem"}}>
-              {/*console.log(this.state.currentMajorQuestion)*/}
-              <Page question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
-            </div>
+            <Container className="overall-border">
+              <Hero />
+            </Container>
+            <Container>
+              <Row>
+                <Sidebar />
+                <Col className="page-content" md={10}>
+                  <Page question={this.state.SURVEY_SCRIPT[this.state.currentMajorQuestion]} handler={this.handleAnswerSubmit} />
+                </Col>
+              </Row>
+            </Container>
           </ErrorBoundary>
         );
       } else {

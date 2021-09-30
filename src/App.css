@@ -1,0 +1,15 @@
+body {
+  background-color: #e3f3f8;
+}
+
+.row {
+  margin: 0;
+}
+
+.overall-border {
+  background-color: #dddddd;
+}
+
+.page-content {
+  padding: 3vh 3vw;
+}

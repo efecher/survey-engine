@@ -23,13 +23,12 @@ export const CheckBoxes = (props: QuestionProps) => {
     event.preventDefault();
     let decodedAnswerMatrix: string[] = [];
 
-    checkedState.map((checked, index) => {
-      if(checked) {
-        decodedAnswerMatrix.push(props.question.options![index].value);
+    for(let i=0; i<checkedState.length; i++) {
+      if(checkedState[i]) {
+        decodedAnswerMatrix.push(props.question.options![i].value);
       }
-      return;
-    });
-    //console.log(decodedAnswerMatrix);
+    }
+    
     props.handler(props.question.QID, decodedAnswerMatrix);
     // NOTE: reset the answer value so the bound input won't start with the answer you gave for the last question
     //return;

@@ -14,7 +14,7 @@
       "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 3,
-      "next": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
+      "next": "ed25226e-6fc2-4faa-9f3d-6d771dd80f29",
       "placeholder": "0",
       "prompt": "Select a number",
       "QID": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
@@ -22,6 +22,29 @@
       "min": "0",
       "max": "100",
       "step": "1"
+    },
+    {
+      "followUps": [],
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 4,
+      "next": "1a03c78c-c29e-4e22-a8f1-21b6998b4fb9",
+      "prompt": "Select a value from the dropdown list",
+      "QID": "ed25226e-6fc2-4faa-9f3d-6d771dd80f29",
+      "type": "select-list",
+      "options": [
+        {
+          "name": "one",
+          "value": "One"
+        },
+        {
+          "name": "two",
+          "value": "Two"
+        },
+        {
+          "name": "three",
+          "value": "Three"
+        }
+      ]
     },
     {
       "followUps": [],

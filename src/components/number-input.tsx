@@ -25,7 +25,7 @@ export const NumberInput = (props: QuestionProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control type="number" onChange={onChange} value={answer}  min={props.question.min} max={props.question.max} step={props.question.step} />
+            <Form.Control type="number" onChange={onChange} value={answer}  min={props.question.min} max={props.question.max || "0"} step={props.question.step} />
           </Col>
           <Col sm={4} className="my-1">
             <Button type="submit">Submit</Button>

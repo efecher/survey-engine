@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 export const SelectList = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.currentTarget.value);
   };
   
@@ -18,7 +18,7 @@ export const SelectList = (props: QuestionProps) => {
   
   const generateOptions = (options: QuestionOptions[]) => {
     let output: JSX.Element[] = options.map((o) => {
-      return <option key={uuid()} value={o.value}>{o.name}</option>;
+      return <option key={v4()} value={o.value}>{o.name}</option>;
     });
 
     return output;
@@ -35,7 +35,7 @@ export const SelectList = (props: QuestionProps) => {
         </Row>
         <Row>
           <Col sm={4} className="my-1">
-            <Form.Control as="select" className="form-select" onChange={onChange}>
+            <Form.Control as="select" className="form-select" onChange={handleChange} value={answer}>
               {
                 (props.question.options !== undefined)?
                   generateOptions(props.question.options): null

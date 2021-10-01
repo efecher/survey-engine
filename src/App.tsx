@@ -5,7 +5,7 @@ import Page from "./components/page";
 import Hero from './components/ui-components/hero';
 import Sidebar from "./components/ui-components/sidebar";
 import { Container, Row, Col } from "react-bootstrap";
-import './App.css';
+import './App.scss';
 
 
 class App extends React.Component<AppProps, AppState> {

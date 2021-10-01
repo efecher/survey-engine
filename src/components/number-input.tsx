@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
+import './question.scss';
 
 export const NumberInput = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');

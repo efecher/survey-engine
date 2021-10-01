@@ -4,11 +4,35 @@
       "followUps": [],
       "isMajorQuestion": true,
       "majorQuestionPosition": 0,
-      "next": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
+      "next": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
       "placeholder": "Type in your favorite color",
       "prompt": "What is your favorite color?",
       "QID": "a44f8dab-875e-423c-8199-78fc333b6534",
       "type": "text-single-line"
+    },
+    {
+      "followUps": [],
+      "groupName": "doors",
+      "isMajorQuestion": true,
+      "majorQuestionPosition": 6,
+      "next": "a9a8424e-06a7-4719-bb6e-d24a8191cc48",
+      "prompt": "Choose from the following",
+      "QID": "0c7d05b1-f45c-43dc-b3dd-e974fb0ec949",
+      "type": "radio-buttons",
+      "options": [
+        {
+          "name": "a",
+          "value": "A"
+        },
+        {
+          "name": "b",
+          "value": "B"
+        },
+        {
+          "name": "c",
+          "value": "C"
+        }
+      ]
     },
     {
       "followUps": [],

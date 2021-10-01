@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, Button, Container } from 'react-bootstrap';
-import './question.css';
+import './question.scss';
 
 export const TextSingleLine = (props: QuestionProps) => {
   const [answer, setAnswer] = useState('');

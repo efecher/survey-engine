@@ -21,8 +21,19 @@ class App extends React.Component<AppProps, AppState> {
   } 
 
   componentDidMount = () => {
+    // NOTE: set up the placeholders for the eventual answer for each question
+    let _sa: QuestionAnswer[] = [];
+
+    for(let q of SurveyQuestions.script) {
+      _sa.push({
+        answer: "",
+        question: q.QID
+      });
+    }
+
     this.setState({
-      SURVEY_SCRIPT: SurveyQuestions.script
+      SURVEY_SCRIPT: SurveyQuestions.script,
+      SURVEY_ANSWERS: _sa
     });
   }
 
